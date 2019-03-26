@@ -1,108 +1,59 @@
 ﻿
-#define _CRT_SECURE_NO_WARNINGS
+#define INTEGER //макрос? заставляющий работать заголовочные файлы function.h должен стоять до него
+#define DOUBLE //если скрыть эту строку, то в мэйне где есть #ifdef DOUBLE тоже скроется
+#define CHAR
 #include <iostream>
-#include <iomanip>
-#include<math.h>
-#include<Windows.h>
-#include<ctime>
-#include<cstring>
-#include<fstream>
+#include"function.h" // наша собственная написанная библиотека
 
+#define N 100; //объявление константы, альтернативный const int
+#define begin { //макросы, для объявления псевдонимов
+#define end }
+#define program int main()
+#define print cout<<
+#define maximum(a, b)(a>b?a:b)
+#define even(a)(a%2==0?true:false) //или просто #define even(a)(a%2==0)
+#define odd(a)(a%2!=0)
 using namespace std;
 
-template<typename T>
-void add(T*&cc, T c) {
-	if (buffer_size == 0)
-	{
-		buffer_size = 4;
-		cc = new T[buffer_size];
-	}
-	else
-	{
-		if (current_size == buffer_size)
-		{
-			buffer_size *= 2;
-			T*tmp = new T[buffer_size];
-			for (int i = 0; i < current_size; i++)
-				tmp[i] = cc[i];
-			delete[] cc;
-			cc = tmp;
-		}
-	}
-	cc[current_size++] = c;
-}
+//макросы (для безопасности по большей части)
+program begin
+
+//int a = 'z';
+//const int b = 100;
+//print maximum(a, b) << endl;
+//print even(b) << endl;
+//print odd(a) << endl;
+
+int *a;
+double *d;
+char *c;
+int n;
+cin >> n;
+
+a = new int[n];
+fill(a, n);
+show(a, n);
+cout << endl;
+delete[] a;
+
+#ifdef DOUBLE
+d = new double[n];
+fill(d, n);
+show(d, n);
+cout << endl;
+delete[] d;
+#endif
+
+#ifdef CHAR
+c = new char[n];
+fill(c, n);
+show(c, n);
+cout << endl;
+delete[] c;
+#endif
 
 
 
-int main()
-{
-	srand(time(NULL));
+system("pause");
+end
 
-	setlocale(LC_ALL, "Rus");
-
-	int tn = 0;
-
-	while (true)
-	{
-		cout << "Задача № ";
-		cin >> tn; cin.get();
-
-		switch (tn)
-		{
-		case 1:
-		{
-
-		}
-		break;
-		case 2:
-		{
-
-		}
-		break;
-		case 3:
-		{
-
-		}
-		break;
-		case 4:
-		{
-
-		}
-		break;
-		case 5:
-		{
-
-		}
-		break;
-		case 6:
-		{
-
-		}
-		break;
-		case 7:
-		{
-
-		}
-		break;
-		case 8:
-		{
-
-		}
-		break;
-		case 9:
-		{
-
-		}
-		break;
-		case 10:
-		{
-
-		}
-		break;
-		default:
-			cout << "нет такой задачи" << endl << endl;
-		}
-	}
-	system("pause");
-	return 0;
-}
