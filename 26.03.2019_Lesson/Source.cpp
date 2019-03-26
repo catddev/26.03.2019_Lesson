@@ -2,10 +2,10 @@
 #define INTEGER //макрос? заставляющий работать заголовочные файлы function.h должен стоять до него
 #define DOUBLE //если скрыть эту строку, то в мэйне где есть #ifdef DOUBLE тоже скроется
 #define CHAR
-#include <iostream>
 #include"function.h" // наша собственная написанная библиотека
+//#include "function.cpp" //нельзя, если НЕ прописан #ifdef _FUNCTION_H_, т.к. уже подключена библиотека "function.h"
 
-#define N 100; //объявление константы, альтернативный const int
+#define N 4; //объявление константы, альтернативный const int
 #define begin { //макросы, для объявления псевдонимов
 #define end }
 #define program int main()
@@ -30,6 +30,7 @@ char *c;
 int n;
 cin >> n;
 
+#if N>3 //альтернатива #ifdef INTEGER
 a = new int[n];
 fill(a, n);
 show(a, n);
@@ -39,8 +40,10 @@ sort(a, n);
 show(a, n);
 cout << endl;
 delete[] a;
+//#endif
 
-#ifdef DOUBLE
+#elif N<2 //else if
+//#ifdef DOUBLE
 d = new double[n];
 fill(d, n);
 show(d, n);
@@ -50,9 +53,10 @@ sort(d, n);
 show(d, n);
 cout << endl;
 delete[] d;
-#endif
+//#endif
 
-#ifdef CHAR
+#else
+//#ifdef CHAR
 c = new char[n];
 fill(c, n);
 show(c, n);
@@ -62,7 +66,7 @@ sort(c, n);
 show(c, n);
 cout << endl;
 delete[] c;
-#endif
+#endif //#if #elif #else - в конце только один #endif
 
 
 
