@@ -69,7 +69,6 @@ cout << endl;
 delete[] c;
 #endif //#if #elif #else - в конце только один #endif
 
-
 system("pause");
 end
 
