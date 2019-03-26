@@ -1,11 +1,11 @@
-#ifdef INTEGER //ifdef это макрос, который проверяет, есть ли у нас константа под названием INTEGER или под любым другим, своим
+п»ї#ifdef INTEGER //ifdef СЌС‚Рѕ РјР°РєСЂРѕСЃ, РєРѕС‚РѕСЂС‹Р№ РїСЂРѕРІРµСЂСЏРµС‚, РµСЃС‚СЊ Р»Рё Сѓ РЅР°СЃ РєРѕРЅСЃС‚Р°РЅС‚Р° РїРѕРґ РЅР°Р·РІР°РЅРёРµРј INTEGER РёР»Рё РїРѕРґ Р»СЋР±С‹Рј РґСЂСѓРіРёРј, СЃРІРѕРёРј
 void fillArray(int *a, int n);
 void printArray(int *a, int n);
 int minArray(int *a, int n);
 void sortArray(int *a, int n);
-#define fill fillArray// создание псевдонима(обобщающие имена) для функции
+#define fill fillArray// СЃРѕР·РґР°РЅРёРµ РїСЃРµРІРґРѕРЅРёРјР°(РѕР±РѕР±С‰Р°СЋС‰РёРµ РёРјРµРЅР°) РґР»СЏ С„СѓРЅРєС†РёРё
 #define show printArray
-#endif // для каждого ifdef
+#endif // РґР»СЏ РєР°Р¶РґРѕРіРѕ ifdef
 
 #ifdef DOUBLE
 void fillArray(double *a, int n);
