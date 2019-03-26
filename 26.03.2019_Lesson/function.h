@@ -5,6 +5,8 @@ int minArray(int *a, int n);
 void sortArray(int *a, int n);
 #define fill fillArray// создание псевдонима(обобщающие имена) для функции
 #define show printArray
+#define min minArray
+#define sort sortArray
 #endif // для каждого ifdef
 
 #ifdef DOUBLE
@@ -14,6 +16,8 @@ double minArray(double *a, int n);
 void sortArray(double *a, int n);
 #define fill fillArray
 #define show printArray
+#define min minArray
+#define sort sortArray
 #endif
 
 #ifdef CHAR
@@ -24,4 +28,6 @@ void sortArray(char *a, int n);
 //#define fillArrayChar fillArray
 #define fill fillArray
 #define show printArray
+#define min minArray
+#define sort sortArray
 #endif

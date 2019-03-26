@@ -34,11 +34,19 @@ a = new int[n];
 fill(a, n);
 show(a, n);
 cout << endl;
+cout << min(a, n) << endl;
+sort(a, n);
+show(a, n);
+cout << endl;
 delete[] a;
 
 #ifdef DOUBLE
 d = new double[n];
 fill(d, n);
+show(d, n);
+cout << endl;
+cout << min(d, n) << endl;
+sort(d, n);
 show(d, n);
 cout << endl;
 delete[] d;
@@ -47,6 +55,10 @@ delete[] d;
 #ifdef CHAR
 c = new char[n];
 fill(c, n);
+show(c, n);
+cout << endl;
+cout << min(c, n) << endl;
+sort(c, n);
 show(c, n);
 cout << endl;
 delete[] c;
